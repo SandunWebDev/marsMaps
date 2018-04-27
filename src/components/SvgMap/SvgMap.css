@@ -1,0 +1,10 @@
+/* .marsMap {
+  background: url("../../images/marsMapFlat_background.jpg");
+  background-size: contain;
+  width: 100%;
+} */
+
+.svgMap__popup {
+  /* position: absolute; */
+  z-index: 999999;
+}

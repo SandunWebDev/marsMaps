@@ -1,0 +1,14 @@
+.SouthPoleMapPage {
+  margin: 50px 30px;
+}
+
+.SouthPoleMapPage__map {
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  border-radius: 7px;
+}
+
+.SouthPoleMapPage__map > div {
+  padding: 20px;
+}

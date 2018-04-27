@@ -1,0 +1,23 @@
+.MainPage {
+  height: 92.4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.MainPage__header__icon {
+  font-size: 200px !important;
+  color: white !important;
+}
+
+.MainPage__header {
+  font-size: 60px !important;
+  margin-bottom: 8px;
+  color: white !important;
+}
+
+.MainPage__header__sub {
+  font-size: 30px !important;
+  color: white !important;
+}
