@@ -7,6 +7,8 @@ import { Route, Link } from "react-router-dom";
 import React, { Component } from "react";
 
 import MainPage from "./MainPage/MainPage";
+import InfoPage from "./InfoPage/InfoPage";
+import GalleryPage from "./GalleryPage/GalleryPage";
 import GlobalMapPage from "./GlobalMapPage/GlobalMapPage";
 import NorthPoleMapPage from "./NorthPoleMapPage/NorthPoleMapPage";
 import SouthPoleMapPage from "./SouthPoleMapPage/SouthPoleMapPage";
@@ -82,7 +84,7 @@ class App extends Component {
             {/* Sub Menu */}
             <Dropdown.Menu>
               <Dropdown.Item as={Link} to="/info" icon="info" text="Info" />
-              <Dropdown.Item as={Link} to="/photos" icon="photo" text="Photos" />
+              <Dropdown.Item as={Link} to="/gallery" icon="photo" text="Gallery" />
               <Dropdown.Item as={Link} to="/videos" icon="video camera" text="Videos" />
             </Dropdown.Menu>
           </Dropdown>
@@ -97,6 +99,8 @@ class App extends Component {
         <Route exact path="/global" component={GlobalMapPage} />
         <Route exact path="/northpole" component={NorthPoleMapPage} />
         <Route exact path="/southpole" component={SouthPoleMapPage} />
+        <Route exact path="/info" component={InfoPage} />
+        <Route exact path="/gallery" component={GalleryPage} />
       </div>
     );
   }
