@@ -4,7 +4,6 @@
 
 import React, { Component } from "react";
 import { Card, Button } from "semantic-ui-react";
-import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
 
 import "./SvgMap.css";
 
@@ -83,7 +82,7 @@ class SvgMap extends Component {
             this.popupToggle(e, item);
           }}
         >
-          <circle cx={item.cx} cy={item.cy} r="4" fill="#ffffff"/>
+          <circle cx={item.cx} cy={item.cy} r="4" fill="#ffffff" />
           <text
             fontSize="24"
             y={item.cy + 5}
@@ -110,7 +109,9 @@ class SvgMap extends Component {
                 <p>Name : {selectedItem.name} Name Goes Here</p>
                 <p>Diameter : {selectedItem.diameter} Diameter Goes Here</p>
                 <p>Latitude : {selectedItem.latitude} Latitude Goes Here</p>
-                <p>Longtitude : {selectedItem.longtitude} Longtitude Goes Here</p>
+                <p>
+                  Longtitude : {selectedItem.longtitude} Longtitude Goes Here
+                </p>
                 <p>Origin : {selectedItem.origin} Origin Goes Here</p>
                 <p>Ethnicity: {selectedItem.ethnicity} Ethnicity Goes Here</p>
               </Card.Description>

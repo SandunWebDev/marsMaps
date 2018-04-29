@@ -12,7 +12,7 @@ class SouthPoleMapPage extends Component {
       backgroundUrl: [marsMapSouthPoleDay_background, undefined, undefined],
       width: 1364,
       height: 686
-    }
+    };
 
     // Array of each mapPoints
     const mapPoints = [
