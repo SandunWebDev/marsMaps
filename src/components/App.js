@@ -85,7 +85,6 @@ class App extends Component {
             <Dropdown.Menu>
               <Dropdown.Item as={Link} to="/info" icon="info" text="Info" />
               <Dropdown.Item as={Link} to="/gallery" icon="photo" text="Gallery" />
-              <Dropdown.Item as={Link} to="/videos" icon="video camera" text="Videos" />
             </Dropdown.Menu>
           </Dropdown>
           <Menu.Menu position="right">

@@ -1,3 +1,7 @@
+/**
+ * This compoents is renderd initially. (/ Route)
+ */
+
 import React, { Component } from "react";
 import { Header, Icon } from "semantic-ui-react";
 

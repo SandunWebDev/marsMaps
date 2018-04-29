@@ -1,8 +1,12 @@
-import React, { Component } from "react";
-import { Card, Icon, Image, Button } from "semantic-ui-react";
-import "./SvgMap.css";
+/**
+ * This is the base component to render maps. This map need mapDetails and mapPoints as props.
+ */
 
-function mapItem(props) {}
+import React, { Component } from "react";
+import { Card, Button } from "semantic-ui-react";
+import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
+
+import "./SvgMap.css";
 
 class SvgMap extends Component {
   state = {
@@ -16,6 +20,7 @@ class SvgMap extends Component {
     backgroundUrl: this.props.mapDetails.backgroundUrl[0]
   };
 
+  // Handle hiding popup when close button clicked.
   popupHide(e) {
     this.setState({
       popup: {
@@ -24,6 +29,7 @@ class SvgMap extends Component {
     });
   }
 
+  // Set postiion for popup to appear when click on mapPoint.
   popupToggle(e, item) {
     this.setState({
       popup: {
@@ -36,12 +42,14 @@ class SvgMap extends Component {
     });
   }
 
+  // Change mapBackground to Day, Night, Terror if available.
   changeMapBackground(mapNo) {
     this.setState({
       backgroundUrl: this.props.mapDetails.backgroundUrl[mapNo]
     });
   }
 
+  // If some maps types (day, night,...) no availabe diasable that button.
   checkDisabled(mapNo) {
     console.log(mapNo, this.props.mapDetails.backgroundUrl);
     if (this.props.mapDetails.backgroundUrl[mapNo] === undefined) {
@@ -71,12 +79,19 @@ class SvgMap extends Component {
         <g
           id={item.id}
           key={id}
-          onClick={(e) => {
+          onClick={e => {
             this.popupToggle(e, item);
           }}
         >
-          <circle cx={item.cx} cy={item.cy} r="4" />
-          <text fontSize="24" y={item.cy + 5} x={item.cx + 10} strokeWidth="0" stroke="#000" fill="#000000">
+          <circle cx={item.cx} cy={item.cy} r="4" fill="#ffffff"/>
+          <text
+            fontSize="24"
+            y={item.cy + 5}
+            x={item.cx + 10}
+            strokeWidth="0"
+            stroke="#000"
+            fill="#ffffff"
+          >
             {item.title}
           </text>
         </g>
@@ -90,14 +105,14 @@ class SvgMap extends Component {
           <Card>
             <Card.Content>
               <Card.Header>{selectedItem.title}</Card.Header>
-              <Card.Meta>{selectedItem.subtitle}</Card.Meta>
+              <Card.Meta>{selectedItem.subtitle} Subtitle Goes Here</Card.Meta>
               <Card.Description>
-                <p>Name : {selectedItem.name} </p>
-                <p>Diameter : {selectedItem.diameter}</p>
-                <p>Latitude : {selectedItem.latitude}</p>
-                <p>Longtitude : {selectedItem.longtitude}</p>
-                <p>Origin : {selectedItem.origin}</p>
-                <p>Ethnicity: {selectedItem.ethnicity}</p>
+                <p>Name : {selectedItem.name} Name Goes Here</p>
+                <p>Diameter : {selectedItem.diameter} Diameter Goes Here</p>
+                <p>Latitude : {selectedItem.latitude} Latitude Goes Here</p>
+                <p>Longtitude : {selectedItem.longtitude} Longtitude Goes Here</p>
+                <p>Origin : {selectedItem.origin} Origin Goes Here</p>
+                <p>Ethnicity: {selectedItem.ethnicity} Ethnicity Goes Here</p>
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
@@ -105,7 +120,7 @@ class SvgMap extends Component {
                 <Button
                   basic
                   color="green"
-                  onClick={(e) => {
+                  onClick={e => {
                     window.open("http://nasa.gov", "_blank");
                     this.popupHide(e);
                   }}
@@ -115,7 +130,7 @@ class SvgMap extends Component {
                 <Button
                   basic
                   color="red"
-                  onClick={(e) => {
+                  onClick={e => {
                     e.stopPropagation();
                     this.popupHide(e);
                   }}
@@ -134,15 +149,8 @@ class SvgMap extends Component {
             backgroundColor: "black",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
-            // backgroundSize: `${mapDetails.width}px ${mapDetails.height}px`,
             width: "100%"
           }}
-          // onClick={(e) => {
-          //   e.stopPropagation();
-          //   if (this.state.popup.display === "initial") {
-          //     this.popupHide(e);
-          //   }
-          // }}
         >
           <rect width="1364" height="686" fill="none" />
           {allMapPoints}

@@ -1,6 +1,11 @@
+/**
+ * This component render GlobalMapPage (/global Route).
+ */
+
 import React, { Component } from "react";
 
 import Map from "../SvgMap/SvgMap";
+
 import marsMapFlatDay_background from "../../images/marsMapFlatDay_background.jpg";
 import marsMapFlatNight_background from "../../images/marsMapFlatNight_background.jpg";
 import marsMapFlatTerrain_background from "../../images/marsMapFlatTerrain_background.jpg";
@@ -10,7 +15,11 @@ class GlobalMapPage extends Component {
   render() {
     // Data about map like backgroundMapImages and dimentions of map.
     const mapDetails = {
-      backgroundUrl: [marsMapFlatDay_background, marsMapFlatNight_background, marsMapFlatTerrain_background],
+      backgroundUrl: [
+        marsMapFlatDay_background,
+        marsMapFlatNight_background,
+        marsMapFlatTerrain_background
+      ],
       width: 1364,
       height: 686
     };

@@ -1,3 +1,7 @@
+/**
+ * This component render NorthPoleMap Page. (/north Route)
+ */
+
 import React, { Component } from "react";
 
 import Map from "../SvgMap/SvgMap";
@@ -7,12 +11,14 @@ import "./NorthPoleMapPage.css";
 
 class NorthPoleMapPage extends Component {
   render() {
+     // Data about map like backgroundMapImages and dimentions of map.
     const mapDetails = {
       backgroundUrl: [marsMapNorthPoleDay_background, undefined, undefined],
       width: 1364,
       height: 686
     };
 
+    // Array of each mapPoints
     const mapPoints = [
       {
         id: "",
