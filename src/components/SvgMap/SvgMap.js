@@ -50,7 +50,6 @@ class SvgMap extends Component {
 
   // If some maps types (day, night,...) no availabe diasable that button.
   checkDisabled(mapNo) {
-    console.log(mapNo, this.props.mapDetails.backgroundUrl);
     if (this.props.mapDetails.backgroundUrl[mapNo] === undefined) {
       return true;
     } else {
@@ -82,7 +81,7 @@ class SvgMap extends Component {
             this.popupToggle(e, item);
           }}
         >
-          <circle cx={item.cx} cy={item.cy} r="4" fill="#ffffff" />
+          {/* <circle cx={item.cx} cy={item.cy} r="4" fill="#ffffff" /> */}
           <text
             fontSize="24"
             y={item.cy + 5}
@@ -93,6 +92,20 @@ class SvgMap extends Component {
           >
             {item.title}
           </text>
+          <path
+            onMouseOver={e => {
+              e.target.style.fillOpacity = "0.7";
+            }}
+            onMouseOut={e => {
+              e.target.style.fillOpacity = "0.0";
+            }}
+            fill="#00000"
+            fillOpacity="0"
+            stroke="#000000"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            d={item.pathOutline}
+          />
         </g>
       );
     });
@@ -150,7 +163,7 @@ class SvgMap extends Component {
             backgroundColor: "black",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
-            width: "100%"
+            // width: "100%"
           }}
         >
           <rect width="1364" height="686" fill="none" />

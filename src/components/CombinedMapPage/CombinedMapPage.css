@@ -1,0 +1,19 @@
+.CombinedMapPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+.CombinedMapPage > div{
+  width: 32%;
+  text-align: center;
+}
+
+.CombinedMapPage h2{
+  color:black;
+}
+
+.CombinedMapPage .GlobalMapPage, .CombinedMapPage .NorthPoleMapPage, .CombinedMapPage .SouthPoleMapPage{
+  margin: 0;
+}

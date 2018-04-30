@@ -7,6 +7,7 @@ import { Route, Link } from "react-router-dom";
 import React, { Component } from "react";
 
 import MainPage from "./MainPage/MainPage";
+import CombinedMapPage from "./CombinedMapPage/CombinedMapPage";
 import InfoPage from "./InfoPage/InfoPage";
 import GalleryPage from "./GalleryPage/GalleryPage";
 import GlobalMapPage from "./GlobalMapPage/GlobalMapPage";
@@ -94,7 +95,8 @@ class App extends Component {
           </Menu.Menu>
         </Menu>
 
-        <Route exact path="/" component={MainPage} />
+        {/* <Route exact path="/" component={MainPage} /> */}
+        <Route exact path="/" component={CombinedMapPage} />
         <Route exact path="/global" component={GlobalMapPage} />
         <Route exact path="/northpole" component={NorthPoleMapPage} />
         <Route exact path="/southpole" component={SouthPoleMapPage} />
