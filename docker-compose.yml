@@ -1,0 +1,8 @@
+services:
+  mars_maps:
+    build: .
+    image: mars_maps
+    container_name: mars_maps
+    restart: unless-stopped
+    ports:
+      - "80:80"
